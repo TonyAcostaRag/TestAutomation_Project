@@ -16,7 +16,8 @@ def after_all(context):
 
 
 def _get_browser(browser):
-    os.chdir('..')
+    print(os.getcwd())
+    #os.chdir('..')
     browser_dict = {
         'chrome': [webdriver.Chrome, ChromeServ(executable_path='drivers/chromedriver')],
         'firefox': [webdriver.Firefox, FFServ(executable_path='drivers/geckodriver')]

@@ -3,7 +3,7 @@ import subprocess
 
 def run_tests(browser):
 
-    feature_directory = 'functional_tests/features'
+    feature_directory = 'tests/functional_tests/features'
 
     result = subprocess.run([
         #'behave', '--format', 'html', '--outfile', 'reports/report.html'
