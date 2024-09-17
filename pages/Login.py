@@ -6,6 +6,7 @@ class Login(BasePage):
     _textbox_username = (By.XPATH, "//input[@id='user-name']")
     _textbox_password = (By.XPATH, "//input[@id='password']")
     _button_signin = (By.XPATH, "//input[@id='login-button']")
+    _label_invalid_credentials = (By.XPATH, "//h3[@data-test='error']")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -18,6 +19,9 @@ class Login(BasePage):
 
     def get_button_signin(self):
         return self.find_element(self._button_signin)
+
+    def get_invalid_credentials_text(self):
+        return self.find_element(self._label_invalid_credentials).text
 
     def go_to_page(self):
         url = 'https://www.saucedemo.com/v1/'
