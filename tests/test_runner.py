@@ -6,11 +6,10 @@ def run_tests(browser):
     feature_directory = 'tests/functional_tests/features'
 
     result = subprocess.run([
-        #'behave', '--format', 'html', '--outfile', 'reports/report.html'
-        'behave', '--define', f'browser={browser}', feature_directory
+        'behave', '--format', 'html', '--outfile', 'reports/report.html',
+        '--define', f'browser={browser}', feature_directory
     ])
 
-    # Check if the tests were successful
     if result.returncode != 0:
         print(f"Tests failed on {browser}")
         return result.returncode
